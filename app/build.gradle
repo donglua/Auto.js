@@ -36,6 +36,7 @@ android {
     lintOptions {
         disable 'MissingTranslation'
         disable 'ExtraTranslation'
+        abortOnError false
     }
     android.applicationVariants.all { variant ->
         variant.outputs.all {

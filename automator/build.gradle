@@ -23,6 +23,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 repositories {
@@ -39,4 +43,15 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.4.0'
     compile project(path: ':common')
+}
+
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'donglua'
+    groupId = 'cn.jingzhuan.autojs'
+    artifactId = 'automator'
+    publishVersion = '1.0.0'
+    desc = 'Oh hi, this is a nice description for a project, right?'
+    website = 'https://github.com/novoda/bintray-release'
 }
